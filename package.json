@@ -1,0 +1,21 @@
+{
+ "name": "iso_9",
+ "version": "1.0.0",
+ "description": "Forward and reverse transliteration according to ISO 9 or ISO 9: 1995 or GOST 7.79-2000 system of A and B",
+ "homepage": "https://github.com/xguest/iso_9_js/",
+ "main": "translit.js",
+ "author": {
+  "name": "xguest",
+  "email": "xguest@list.ru"
+ },
+ "bugs": {
+  "url": "https://github.com/xguest/iso_9_js/issues"
+ },
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/xguest/iso_9_js.git"
+ },
+ "license": "GPL",
+ "readmeFilename": "README.md",
+ "scripts": {}
+}
