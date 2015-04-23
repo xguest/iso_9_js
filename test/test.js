@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var translit = require('../translit');
 
 function example() {

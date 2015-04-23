@@ -1,6 +1,6 @@
 {
  "name": "iso_9",
- "version": "1.0.0",
+ "version": "1.0.1",
  "description": "Forward and reverse transliteration according to ISO 9 or ISO 9: 1995 or GOST 7.79-2000 system of A and B",
  "homepage": "https://github.com/xguest/iso_9_js/",
  "main": "translit.js",
