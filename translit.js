@@ -32,8 +32,8 @@ module.exports = function (str, typ) {
   if(typ === abs) {                    // Прямая транслитерация(кирилица в латиницу)
    // Правила транслитерации (из ГОСТ).
    // "i`" только перед согласными в ст. рус. и болг.
-   //  str = str.replace(/(i(?=.[^аеиоуъ\s]+))/ig, "1`");
-   str = str.replace(/(\u0456(?=.[^\u0430\u0435\u0438\u043E\u0443\u044A\s]+))/ig, "1`");
+   //  str = str.replace(/(i(?=.[^аеиоуъ\s]+))/ig, "$1`");
+   str = str.replace(/(\u0456(?=.[^\u0430\u0435\u0438\u043E\u0443\u044A\s]+))/ig, "$1`");
    return [                            // Возвращаем массив функций
     function (col, row) {              // создаем таблицу и RegExp
      var chr;                          // Символ
@@ -46,10 +46,10 @@ module.exports = function (str, typ) {
     function (str) {                   // str - транслируемая строка.
     // Правила транслитерации (из ГОСТ).
     return str.replace(/i``/ig, "i`"). // "i`" только перед согласными в ст. рус. и болг.
-    replace(/((c)z)(?=[ieyj])/ig, "2");// "cz" в символ "c"
+    replace(/((c)z)(?=[ieyj])/ig, "$2");// "cz" в символ "c"
     }];
   } else {                             // Обратная транслитерация (латиница в кирилицу)
-   str = str.replace(/(c)(?=[ieyj])/ig, "1z"); // Правило сочетания "cz"
+   str = str.replace(/(c)(?=[ieyj])/ig, "$1z"); // Правило сочетания "cz"
    return [                            // Возвращаем массив функций
     function (col, row) {              // Создаем таблицу и RegExp
      var chr;                          // Символа
