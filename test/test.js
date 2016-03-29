@@ -21,8 +21,7 @@ var translit = process.env.NPM_COV ?
     'Jadat povek`e od ovie meki franczuskiot rolni, pa pijat chaj!'],
    ['Русский   ', //  'мірь', 'mi`r`'
     'Съешь ещё этих мягких французских булок, да выпей же чаю!',
-    'S``esh` eshhyo e`tix myagkix franczuzskix bulok, da vy`pej zhe chayu!'
-   ],
+    'S``esh` eshhyo e`tix myagkix franczuzskix bulok, da vy`pej zhe chayu!'],
    ['Українська',
     'З’їж ще цих м’яких французьких булок, та випий же чаю!',
     'Z\'yizh shhe czy`x m\'yaky`x franczuz`ky`x bulok, ta vy`py`j zhe chayu!']];
@@ -33,7 +32,7 @@ describe('Проверка translit',
       c = phrase[b][1]; e = translit(c, b);
       d = phrase[b][2]; f = translit(d, -1 * b);
       it(phrase[b][0] + ' ==> ' + translit(phrase[b][0], b),
-      function() {assert.deepEqual((c === f && e === d), true);});
+       function() {assert.ok((c === f && e === d));});
     }
   }
 );

@@ -61,17 +61,19 @@ function translit(str, typ) {
   * @return {Array}  Массив функций пред и пост обработки.
   **/
     function prep (a) {
-      var write = !a ? function(chr, row) {trantab[row] = chr;regarr.push(row);} :
-      function(row, chr) {trantab[row] = chr;regarr.push(row);};
-      return function(col, row) {        // создаем таблицу и RegExp
-        var chr = col[abs] || col[0];    // Символ
-        if (chr) write(chr, row);        // Если символ есть
-        }
+      var write = [
+        function(chr, row) {trantab[row] = chr;regarr.push(row);},
+        function(row, chr) {trantab[row] = chr;regarr.push(row);}
+      ][a];
+       return function(col, row) {       // создаем таблицу и RegExp
+         var chr = col[abs] || col[0];   // Символ
+         if (chr) write(chr, row);       // Если символ есть
+       }
     }
     var abs = Math.abs(typ);             // Абсолютное значение транслитерации
     if (typ === abs) {                   // Прямая транслитерация в латиницу
       str = str.replace(/(i(?=.[^аеиоуъ\s]+))/ig, '$1`'); // "i`" ГОСТ ст. рус. и болг.
-      return [prep(),                    // Возвращаем массив функций
+      return [prep(0),                   // Возвращаем массив функций
         function(str) {                  // str - транслируемая строка.
           return str.replace(/i``/ig, 'i`').    // "i`" в ГОСТ ст. рус. и болг.
            replace(/((c)z)(?=[ieyj])/ig, '$1'); // "cz" в символ "c"
