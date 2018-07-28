@@ -1,4 +1,4 @@
-/* #!/usr/bin/env node; */
+// /* #!/usr/bin/env node; */
 /* jshint -W100 */
 /**
 * @name      translit.js
