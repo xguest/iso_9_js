@@ -52,7 +52,7 @@ example()
 [climate-img]: https://img.shields.io/badge/Climate-4.0-brightgreen.svg?style=flat-square
 [climate-url]: https://codeclimate.com/github/xguest/iso_9_js
 
-[Coverage-img]: https://img.shields.io/badge/Coverage-100%-brightgreen.svg?style=flat-square
+[Coverage-img]: https://coveralls.io/repos/github/xguest/iso_9_js/badge.svg?branch=master
 [Coverage-url]: https://coveralls.io/github/xguest/iso_9_js?branch=master
 
 [docs-img]: https://img.shields.io/badge/Docs-100%-brightgreen.svg?style=flat-square
